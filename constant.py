@@ -1,0 +1,2 @@
+PHONE_NUMBER = "13661045480"
+EXTRACT_CODE = "test_for_test"
