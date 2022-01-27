@@ -13,7 +13,6 @@
   <p align="center">
     自动化进行基础冒烟测试
     <br/>
-    <a href="https://github.com/othneildrew/Best-README-Template">查看演示</a>
   </p>
 </div>
 
