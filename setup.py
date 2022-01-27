@@ -1,14 +1,14 @@
 from appium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
-from constant import PHONE_NUMBER
+from constant import PHONE_NUMBER, DEVICE_NAME, P_VERSION
 
 def set_things_up():
     print("configuration started...")
     cap = {}
-    cap["deviceName"] = "emulator-5554"
+    cap["deviceName"] = DEVICE_NAME
     cap["platformName"] = "Android"
-    cap["platformVersion"] = "11.0.0"
+    cap["platformVersion"] = P_VERSION
     cap["appPackage"] = "com.iflytek.zhiying"
     cap["appActivity"] = "com.iflytek.zhiying.LaunchActivity"
     cap["useNewWDA"] = "true"

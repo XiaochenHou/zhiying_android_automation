@@ -17,35 +17,7 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>内容概览</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 
 ## 关于项目
 
@@ -53,7 +25,6 @@
 
 请参照**环境搭建**来开始配置并应用此程序。
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
 
 ### 工具/框架
 
@@ -68,11 +39,12 @@
 * [npm](https://www.npmjs.com/)
 * [Homebrew](https://brew.sh/)
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
 
 ## 环境搭建(从零开始)
 
 请根据下面内容首先进行环境的搭建，根据自身情况进行调整，已经安装可以跳过。
+
+**_注意jdk请选择1.8版本进行安装，这样才能正常使用uiautomatorviewer_**
 
 ### Mac OS
 
@@ -82,7 +54,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-2.安装node.js，npm
+2.安装Node.js，npm
 
 ```sh
 brew install node
@@ -108,166 +80,121 @@ brew install carthage
 
 5.配置`jdk1.8`（已经配置请忽略）
 
-<a href="https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/">按照这个链接的教程去配置</a>
+<a href="https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/">按照这个链接的教程去配置jdk</a>
 
+6.配置安卓`sdk`（已经配置请忽略）
 
-6.配置安卓`sdk`
+<a href="https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x">
+按照这个链接的教程去配置sdk</a>
 
-<a href="https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x">按照这个链接的教程去配置</a>
-
-7.运行appium-doctor，并使所有**必须**环境得到绿色对勾✅
+7.运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
 <img src="img/appium-doctor.png" alt="Logo">
-
 
 ### Windows
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+1.安装Node.js, npm
 
-### Installation
+点击<a href="https://nodejs.org/en/download/">这里</a>选择windows下载并安装
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't
-rely on any external dependencies or services._
+2.打开cmd安装appium
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+```sh
+npm install -g appium
+```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+3.安装appium-doctor用来检查环境
+
+```sh
+npm install -g appium-doctor
+```
+
+4.配置JAVA_HOME`jdk1.8`（已经配置请忽略）
+
+<a href="https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html">
+按照这个链接的教程去配置JAVA_HOME</a>
+
+5.配置ANDROID_HOME`sdk`（已经配置请忽略）
+
+<a href="https://web.archive.org/web/20180210044548/http://spring.io/guides/gs/android/">
+按照这个链接的教程去配置sdk</a>
+
+
+7.运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
+<img src="img/appium-doctor_win.png">
+
+## Android Emulator
+
+_特别说明：如果使用安卓的模拟器进行运行，请选择x86，Android 11.0镜像进行安装_
+<img src="img/emulator_config.png">
+
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## 使用方法
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos
-work well in this space. You may also link to more resources.
+1.将整个仓库克隆到本地（需要安装git）
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+2.找到`constant.py`文件，修改里面的常量，下面是*样例*
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+```sh
+PHONE_NUMBER = "13661045480"    //自己手机号
+EXTRACT_CODE = "test_for_test"  //提取会议记录码
+DEVICE_NAME = "emulator-5554"   //设备名称(adb devices)
+P_VERSION = "11.0.0"            //安卓版本
+```
 
+3.安装Appium-Python-Client库
 
+```sh
+pip install Appium-Python-Client
+```
 
-<!-- ROADMAP -->
+4.将手机连接到电脑，或者启动模拟器，当`adb devices`可以识别到设备代表连接成功
 
-## Roadmap
+5.打开终端或cmd，输入appium启动serve，**记得不要关闭这个页面**
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+6.运行程序的main方法，自动化测试开始
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (
-and known issues).
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## 许可证
 
+根据 MIT 许可证分发。 有关更多信息，请参阅`LICENSE.txt`。
 
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any
-contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also
-simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 
 <!-- CONTACT -->
 
-## Contact
+## 联系方式
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+侯啸辰 - xchou2@iflytek.com - 13661045480(微信同号)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+项目链接: [GitHub](https://github.com/XiaochenHou/zhiying_android_automation) |
+[Gitee](https://gitee.com/xiaochenhou/zhiying_android_automation)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgments
+## 致谢
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites
-to kick things off!
+以下这些资源帮助我完成了这个项目，诚挚的表示感谢，希望此项目可以帮助到更多人
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [How to install appium on Windows](https://www.youtube.com/watch?v=x-hBpgM5je8&t=2s)
+* [How to install appium on MacOS](https://www.youtube.com/watch?v=7APcLr-cBM8)
+* [Automation Step by Step](https://www.youtube.com/channel/UCTt7pyY-o0eltq14glaG5dg)
+* [Python+Appium实现APP自动化测试](https://baijiahao.baidu.com/s?id=1662021502495073716&wfr=spider&for=pc)
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+环境部署和代码遇到了很多的问题以及报错，感谢下面几个社区帮助我解决问题：
 
+* [Appium Discuss](https://discuss.appium.io/)
+* [Stack Overflow](https://stackoverflow.com/)
+* [CSDN](https://www.csdn.net/)
 
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-
-[linkedin-url]: https://linkedin.com/in/othneildrew
-
-[product-screenshot]: images/screenshot.png
+<p align="right">(<a href="#top">回到顶部</a>)</p>
