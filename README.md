@@ -16,14 +16,11 @@
   </p>
 </div>
 
-
-
 ## 关于项目
 
 此项目开发并且用于科大讯飞公司，江西讯飞智影公司投影仪所配置的安卓手机app的冒烟的基础功能的测试。
 
 请参照**环境搭建**来开始配置并应用此程序。
-
 
 ### 工具/框架
 
@@ -38,7 +35,6 @@
 * [npm](https://www.npmjs.com/)
 * [Homebrew](https://brew.sh/)
 
-
 ## 环境搭建(从零开始)
 
 请根据下面内容首先进行环境的搭建，根据自身情况进行调整，已经安装可以跳过。
@@ -47,84 +43,93 @@
 
 ### Mac OS
 
-1.安装homebrew，打开终端并运行
+1. 安装homebrew，打开终端并运行
 
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
-2.安装Node.js，npm
+2. 安装Node.js，npm
 
-```sh
-brew install node
-```
+   ```sh
+   brew install node
+   ```
 
-3.安装命令行appium
+3. 安装命令行appium
 
-```sh
-npm install -g appium
-```
+   ```sh
+   npm install -g appium
+   ```
 
-4.安装appium-doctor
+4. 安装appium-doctor
+   
+   ```sh
+   npm install appium-doctor -g
+   ```
 
-```sh
-npm install appium-doctor -g
-```
+5. 安装Carthage
 
-5.安装Carthage
+   ```sh
+   brew install carthage
+   ```
 
-```sh
-brew install carthage
-```
+5. 配置`jdk1.8`（已经配置请忽略）
 
-5.配置`jdk1.8`（已经配置请忽略）
+   <a href="https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/">按照这个链接的教程去配置jdk</a>
 
-<a href="https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/">按照这个链接的教程去配置jdk</a>
+6. 配置安卓`sdk`（已经配置请忽略）
 
-6.配置安卓`sdk`（已经配置请忽略）
+   <a href="https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x">
+   按照这个链接的教程去配置sdk</a>
 
-<a href="https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x">
-按照这个链接的教程去配置sdk</a>
-
-7.运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
+7. 运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
 <img src="img/appium-doctor.png" alt="Logo">
 
 ### Windows
 
-1.安装Node.js, npm
+1. 安装Node.js, npm
 
-点击<a href="https://nodejs.org/en/download/">这里</a>选择windows下载并安装
+   点击<a href="https://nodejs.org/en/download/">这里</a>选择windows下载并安装
 
-2.打开cmd安装appium
+2. 打开cmd安装appium
 
-```sh
-npm install -g appium
-```
+   ```sh
+   npm install -g appium
+   ```
 
-3.安装appium-doctor用来检查环境
+3. 安装appium-doctor用来检查环境
 
-```sh
-npm install -g appium-doctor
-```
+    ```sh
+    npm install -g appium-doctor
+    ```
 
-4.配置JAVA_HOME`jdk1.8`（已经配置请忽略）
+4. 配置JAVA_HOME`jdk1.8`（已经配置请忽略）
 
-<a href="https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html">
-按照这个链接的教程去配置JAVA_HOME</a>
+    <a href="https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html">
+    按照这个链接的教程去配置JAVA_HOME</a>
 
-5.配置ANDROID_HOME`sdk`（已经配置请忽略）
+5. 配置ANDROID_HOME`sdk`（已经配置请忽略）
 
-<a href="https://web.archive.org/web/20180210044548/http://spring.io/guides/gs/android/">
-按照这个链接的教程去配置sdk</a>
+    <a href="https://web.archive.org/web/20180210044548/http://spring.io/guides/gs/android/">
+    按照这个链接的教程去配置sdk</a>
 
 
-7.运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
-<img src="img/appium-doctor_win.png">
+6. 运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
+   <img src="img/appium-doctor_win.png">
 
 ## Android Emulator
 
 _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Android 11.0镜像进行安装_
 <img src="img/emulator_config.png">
+
+1. 查询设备名称列表
+    ```sh
+    emulator -list-avds
+    ```
+2. 启动制定模拟器
+    ```sh
+    emulator @设备名称
+    ```
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
@@ -134,28 +139,28 @@ _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Andr
 
 ## 使用方法
 
-1.将整个仓库克隆到本地（需要安装git）
+1. 将整个仓库克隆到本地（需要安装git）
 
-2.找到`constant.py`文件，修改里面的常量，下面是*样例*
+2. 找到`constant.py`文件，修改里面的常量，下面是*样例*
 
-```sh
-PHONE_NUMBER = "13661045480"    //自己手机号
-EXTRACT_CODE = "test_for_test"  //提取会议记录码
-DEVICE_NAME = "emulator-5554"   //设备名称(adb devices)
-P_VERSION = "11.0.0"            //安卓版本
-```
+   ```sh
+   PHONE_NUMBER = "13661045480"    //自己手机号
+   EXTRACT_CODE = "test_for_test"  //提取会议记录码
+   DEVICE_NAME = "emulator-5554"   //设备名称(adb devices)
+   P_VERSION = "11.0.0"            //安卓版本
+   ```
 
-3.安装Appium-Python-Client库
+3. 安装Appium-Python-Client库
 
-```sh
-pip install Appium-Python-Client
-```
+   ```sh
+   pip install Appium-Python-Client
+   ```
 
-4.将手机连接到电脑，或者启动模拟器，当`adb devices`可以识别到设备代表连接成功
+4. 将手机连接到电脑，或者启动模拟器，当`adb devices`可以识别到设备代表连接成功
 
-5.打开终端或cmd，输入appium启动serve，**记得不要关闭这个页面**
+5. 打开终端或cmd，输入appium启动serve，**记得不要关闭这个页面**
 
-6.运行程序的main方法，自动化测试开始
+6. 运行程序的main方法，自动化测试开始
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
