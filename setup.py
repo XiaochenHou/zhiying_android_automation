@@ -1,7 +1,8 @@
 from appium import webdriver
-from time import sleep
 from selenium.webdriver.common.by import By
 from constant import PHONE_NUMBER, DEVICE_NAME, P_VERSION
+from constant import wait
+
 
 def set_things_up():
     print("configuration started...")
@@ -21,11 +22,6 @@ def set_things_up():
     driver = webdriver.Remote('0.0.0.0:4723/wd/hub', cap)
     print("configuration done!")
     return driver
-
-
-def wait(sec):
-    print(f'wait for {sec} seconds')
-    sleep(sec)
 
 
 def login_testing(driver):

@@ -1,4 +1,4 @@
-from setup import wait
+from constant import wait
 from selenium.webdriver.common.by import By
 
 

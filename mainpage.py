@@ -1,4 +1,4 @@
-from setup import wait
+from constant import wait
 from selenium.webdriver.common.by import By
 from constant import EXTRACT_CODE, check_exists
 
@@ -13,9 +13,6 @@ def main_page_testing(driver):
             wait(1)
         else:
             break
-    # for _ in range(3):
-    #     driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_next").click()
-    #     wait(1)
 
     # 扫一扫
     home_scan = driver.find_element(By.ID, "com.iflytek.zhiying:id/iv_home_scan")
