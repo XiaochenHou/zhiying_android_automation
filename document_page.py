@@ -72,6 +72,7 @@ def check_collection(driver):
     wait(2)
     # 取消收藏
     driver.find_element(By.ID, "com.iflytek.zhiying:id/iv_document_collect").click()
+    wait(1)
     print("the star unchecked")
     driver.back()
     wait(1)

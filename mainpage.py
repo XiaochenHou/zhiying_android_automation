@@ -1,15 +1,23 @@
 from setup import wait
 from selenium.webdriver.common.by import By
-from constant import EXTRACT_CODE
+from constant import EXTRACT_CODE, check_exists
 
 
 def main_page_testing(driver):
     wait(3)
     print("========main_page_testing started========")
-    driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_next").click()
-    wait(1)
+
+    while True:
+        if check_exists(driver, By.ID, "com.iflytek.zhiying:id/tv_next"):
+            driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_next").click()
+            wait(1)
+        else:
+            break
+    # for _ in range(3):
+    #     driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_next").click()
+    #     wait(1)
+
     # 扫一扫
-    driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_next").click()
     home_scan = driver.find_element(By.ID, "com.iflytek.zhiying:id/iv_home_scan")
     home_scan.click()
     print("home_scan clicked")
@@ -17,7 +25,9 @@ def main_page_testing(driver):
     driver.back()
     wait(3)
 
-    driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_cancel").click()  # cancel the questionnaire
+    # cancel the questionnaire
+    if check_exists(driver, By.ID, "com.iflytek.zhiying:id/tv_cancel"):
+        driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_cancel").click()
 
     # main page search function test starts here
     print("search functionality test...")
