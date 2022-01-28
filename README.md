@@ -16,6 +16,7 @@
   </p>
 </div>
 <div id="top"></div>
+
 ## 关于项目
 
 此项目开发并且用于科大讯飞公司，江西讯飞智影公司投影仪所配置的安卓手机app的冒烟的基础功能的测试。
@@ -62,7 +63,7 @@
    ```
 
 4. 安装appium-doctor
-   
+
    ```sh
    npm install appium-doctor -g
    ```
@@ -83,7 +84,7 @@
    按照这个链接的教程去配置sdk</a>
 
 7. 运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
-<img src="img/appium-doctor.png" alt="Logo">
+   <img src="img/appium-doctor.png" alt="Logo">
 
 ### Windows
 
