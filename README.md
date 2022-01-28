@@ -1,6 +1,6 @@
 <h1 align="center">讯飞智影安卓自动化测试</h1>
 
-<div id="top"></div>
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -15,7 +15,7 @@
     <br/>
   </p>
 </div>
-
+<div id="top"></div>
 ## 关于项目
 
 此项目开发并且用于科大讯飞公司，江西讯飞智影公司投影仪所配置的安卓手机app的冒烟的基础功能的测试。
