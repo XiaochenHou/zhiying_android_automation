@@ -1,12 +1,13 @@
-from constant import wait
+from time import sleep
+
+from constant import wait, back
 from selenium.webdriver.common.by import By
 from constant import EXTRACT_CODE, check_exists
 
 
 def main_page_testing(driver):
-    wait(3)
     print("========main_page_testing started========")
-
+    sleep(2)
     driver.implicitly_wait(2)
     while True:
         if check_exists(driver, By.ID, "com.iflytek.zhiying:id/tv_next"):
@@ -19,19 +20,18 @@ def main_page_testing(driver):
     home_scan.click()
     print("home_scan clicked")
 
-    driver.back()
+    back(driver)
 
     # cancel the questionnaire
     # if check_exists(driver, By.ID, "com.iflytek.zhiying:id/tv_cancel"):
     #     driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_cancel").click()
-
 
     # main page search function test starts here
     print("search functionality test...")
     driver.find_element(By.ID, "com.iflytek.zhiying:id/rlv_home_search").click()  # click search bar
     driver.find_element(By.ID, "com.iflytek.zhiying:id/edt_search").send_keys("会议")
     driver.hide_keyboard()
-    driver.back()
+    back(driver)
     print("search functionality test done!")
 
     # upload a picture
@@ -66,6 +66,6 @@ def main_page_testing(driver):
 
     driver.find_element(By.ID, "com.iflytek.zhiying:id/edt_extract_code").send_keys(EXTRACT_CODE)
     driver.hide_keyboard()
-    driver.back()
+    back(driver)
 
     print("meeting extraction test done!")
