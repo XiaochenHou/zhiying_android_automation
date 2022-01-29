@@ -1,6 +1,8 @@
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 
+from selenium.webdriver.common.by import By
+
 PHONE_NUMBER = "13661045480"
 EXTRACT_CODE = "test_for_test"
 DEVICE_NAME = "emulator-5554"
@@ -16,5 +18,10 @@ def check_exists(driver, method, path):
 
 
 def wait(sec):
-    print(f'wait for {sec} seconds')
-    sleep(sec)
+    # print(f'wait for {sec} seconds')
+    sleep(0)
+
+
+def back(driver):
+    sleep(2)
+    driver.back()
