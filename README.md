@@ -149,8 +149,10 @@ _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Andr
    EXTRACT_CODE = "test_for_test"  //提取会议记录码
    DEVICE_NAME = "emulator-5554"   //设备名称(adb devices)
    P_VERSION = "11.0.0"            //安卓版本
+   SEARCH_CONTENT = "会议"          //自定义搜索内容
+   FULL_TEST = True                //是否为全部测试流程
    ```
-
+   如果不是全部流程的话，确保账户已经登陆，并且comment掉不需要的测试
 3. 安装Appium-Python-Client库
 
    ```sh

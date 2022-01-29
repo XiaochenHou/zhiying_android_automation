@@ -1,8 +1,7 @@
 from time import sleep
-
-from constant import back
+from constant import back, check_exists
 from selenium.webdriver.common.by import By
-from constant import EXTRACT_CODE, check_exists
+from constant import EXTRACT_CODE, SEARCH_CONTENT
 
 
 def main_page_testing(driver):
@@ -29,7 +28,7 @@ def main_page_testing(driver):
     # main page search function test starts here
     print("search functionality test...")
     driver.find_element(By.ID, "com.iflytek.zhiying:id/rlv_home_search").click()  # click search bar
-    driver.find_element(By.ID, "com.iflytek.zhiying:id/edt_search").send_keys("会议")
+    driver.find_element(By.ID, "com.iflytek.zhiying:id/edt_search").send_keys(SEARCH_CONTENT)
     driver.hide_keyboard()
     back(driver)
     print("search functionality test done!")
