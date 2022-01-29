@@ -1,13 +1,12 @@
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 
-from selenium.webdriver.common.by import By
-
 PHONE_NUMBER = "13661045480"
 EXTRACT_CODE = "test_for_test"
 DEVICE_NAME = "emulator-5554"
 P_VERSION = "11.0.0"
 FULL_TEST = True
+
 
 def check_exists(driver, method, path):
     try:
@@ -17,11 +16,12 @@ def check_exists(driver, method, path):
     return True
 
 
-def wait(sec):
-    # print(f'wait for {sec} seconds')
-    sleep(0)
-
-
 def back(driver):
     sleep(2)
     driver.back()
+
+
+def tear_down(driver):
+    sleep(2)
+    print("========ALL TESTS DONE!========")
+    driver.quit()

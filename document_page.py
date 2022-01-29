@@ -1,6 +1,6 @@
 from time import sleep
 
-from constant import wait, back
+from constant import back
 from selenium.webdriver.common.by import By
 
 
@@ -9,7 +9,7 @@ def document_page_test(driver):
     # switch to the document page
     driver.find_element(By.XPATH,
                         "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[2]").click()
-    wait(1)
+
     print("switched to the document page")
     print("testing the three dots...")
     three_dots = driver.find_element(By.XPATH,
@@ -61,8 +61,10 @@ def document_page_test(driver):
     print("========document page done!========")
 
     # reset the page to home page
-    driver.find_element(By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/androidx.appcompat.app.ActionBar.Tab[1]").click()
-    driver.find_element(By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]").click()
+    driver.find_element(By.XPATH,
+                        "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/androidx.appcompat.app.ActionBar.Tab[1]").click()
+    driver.find_element(By.XPATH,
+                        "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]").click()
 
 
 def check_collection(driver):
@@ -70,16 +72,15 @@ def check_collection(driver):
     print("now check the collection")
     driver.find_element(By.XPATH,
                         "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]").click()
-    wait(1)
+
     driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_collect").click()
     sleep(2)
     # 取消收藏
     driver.find_element(By.ID, "com.iflytek.zhiying:id/iv_document_collect").click()
-    wait(1)
+
     print("the star unchecked")
     back(driver)
-    wait(1)
+
     print("collection check done!")
     driver.find_element(By.XPATH,
                         "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[2]").click()
-    wait(1)

@@ -1,12 +1,12 @@
 from time import sleep
 
-from constant import wait, back
+from constant import back
 from selenium.webdriver.common.by import By
 from constant import EXTRACT_CODE, check_exists
 
 
 def main_page_testing(driver):
-    print("========main_page_testing started========")
+    print("========main page testing started========")
     sleep(2)
     driver.implicitly_wait(2)
     while True:
