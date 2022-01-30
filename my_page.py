@@ -12,9 +12,10 @@ def my_page_testing(driver):
     # 获取云空间
     driver.find_element(By.ID, "com.iflytek.zhiying:id/tv_cloud_space").click()
     driver.find_element(By.ID, "com.iflytek.zhiying:id/iv_help").click()
+    sleep(2)
     back(driver)
-    el3 = driver.find_element(By.ID, "com.iflytek.zhiying:id/iv_cloud_list")
-    el3.click()
+    driver.find_element(By.ID, "com.iflytek.zhiying:id/iv_cloud_list").click()
+    sleep(2)
     back(driver)
     back(driver)
     print("cloud testing done!")
