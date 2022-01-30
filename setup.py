@@ -1,8 +1,8 @@
 from appium import webdriver
-from constant import DEVICE_NAME, P_VERSION, FULL_TEST
+from constant import DEVICE_NAME, P_VERSION
 
 
-def set_things_up():
+def set_things_up(full_test):
     print("configuration started...")
     cap = {}
     cap["deviceName"] = DEVICE_NAME
@@ -11,7 +11,7 @@ def set_things_up():
     cap["appPackage"] = "com.iflytek.zhiying"
     cap["appActivity"] = "com.iflytek.zhiying.LaunchActivity"
     cap['autoGrantPermissions'] = 'true'
-    if not FULL_TEST:
+    if not full_test:
         cap["noReset"] = "true"
 
     driver = webdriver.Remote('0.0.0.0:4723/wd/hub', cap)

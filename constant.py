@@ -6,7 +6,6 @@ EXTRACT_CODE = "test_for_test"
 DEVICE_NAME = "emulator-5554"
 P_VERSION = "11.0.0"
 SEARCH_CONTENT = "会议"
-FULL_TEST = True
 
 
 def check_exists(driver, method, path):
