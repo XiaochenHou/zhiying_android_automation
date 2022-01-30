@@ -140,7 +140,7 @@ _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Andr
 
 ## 使用方法
 
-1. 将整个仓库克隆到本地（需要安装git）
+1. 将整个仓库(repository)克隆到本地（需要安装git）
 
 2. 找到`constant.py`文件，修改里面的常量，下面是*样例*
 
@@ -150,7 +150,6 @@ _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Andr
    DEVICE_NAME = "emulator-5554"   //设备名称(adb devices)
    P_VERSION = "11.0.0"            //安卓版本
    SEARCH_CONTENT = "会议"          //自定义搜索内容
-   FULL_TEST = True                //是否为全部测试流程
    ```
    如果不是全部流程的话，确保账户已经登陆，并且comment掉不需要的测试
 3. 安装Appium-Python-Client库
@@ -163,7 +162,18 @@ _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Andr
 
 5. 打开终端或cmd，输入appium启动serve，**记得不要关闭这个页面**
 
-6. 运行程序的main方法，自动化测试开始
+6. 在terminal或cmd运行程序的main方法
+   ```sh
+   python3 main.py
+   ```
+7. 通过命令行-h来查看所有命令
+    ```sh
+   python3 main.py -h
+   ```
+8. 可以通过命令行flag来控制想要单独测试的部分模块，例如，只测试主页，如下：
+   ```sh
+   python3 main.py --main
+   ```
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 

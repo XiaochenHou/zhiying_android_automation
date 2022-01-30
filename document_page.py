@@ -1,5 +1,4 @@
 from time import sleep
-
 from constant import back
 from selenium.webdriver.common.by import By
 
