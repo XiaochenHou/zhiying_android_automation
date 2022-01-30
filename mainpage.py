@@ -6,7 +6,7 @@ from constant import EXTRACT_CODE, SEARCH_CONTENT
 
 def main_page_testing(driver):
     print("========main page testing started========")
-    sleep(2)
+    sleep(5)
     driver.implicitly_wait(2)
     while True:
         if check_exists(driver, By.ID, "com.iflytek.zhiying:id/tv_next"):
