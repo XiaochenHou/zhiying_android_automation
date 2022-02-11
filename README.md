@@ -38,7 +38,8 @@
 
 ## 环境搭建(从零开始)
 
-请根据下面内容首先进行环境的搭建，根据自身情况进行调整，已经安装可以跳过。
+请根据下面内容首先进行环境的搭建，根据自身情况进行调整，已经安装可以跳过。\
+建议安装命令行版本而非GUI版本appium，这样可以只通过一个终端管理程序。
 
 **_注意jdk请选择1.8版本进行安装，这样才能正常使用uiautomatorviewer_**
 
@@ -76,11 +77,11 @@
 
 5. 配置`jdk1.8`（已经配置请忽略）
 
-   <a href="https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/">按照这个链接的教程去配置jdk</a>
+   <a href="https://blog.csdn.net/aishufan4507/article/details/102372067">按照这个链接的教程去配置jdk</a>
 
 6. 配置安卓`sdk`（已经配置请忽略）
 
-   <a href="https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x">
+   <a href="https://blog.csdn.net/yanzisu_congcong/article/details/78365799">
    按照这个链接的教程去配置sdk</a>
 
 7. 运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
@@ -103,23 +104,30 @@
     ```sh
     npm install -g appium-doctor
     ```
+4. 下载并且安装`jdk1.8`，选择x64版本安装
 
-4. 配置JAVA_HOME`jdk1.8`（已经配置请忽略）
+   <a href="https://www.oracle.com/java/technologies/downloads/#java8-windows">点击这里下载从官网下载</a>
 
-    <a href="https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html">
+5. 配置JAVA_HOME`jdk1.8`（已经配置请忽略）
+
+    <a href="https://blog.csdn.net/qq_42017152/article/details/90732057">
     按照这个链接的教程去配置JAVA_HOME</a>
+6. 下载Android Studio
 
-5. 配置ANDROID_HOME`sdk`（已经配置请忽略）
+   <a href="https://developer.android.google.cn/studio/">
+    点这里从官网下载Android Studio</a>
 
-    <a href="https://web.archive.org/web/20180210044548/http://spring.io/guides/gs/android/">
+7. 配置ANDROID_HOME`sdk`（已经配置请忽略）
+
+    <a href="https://www.jianshu.com/p/ff5a15217f4e">
     按照这个链接的教程去配置sdk</a>
 
-
-6. 运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
+8. 运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
    <img src="img/appium-doctor_win.png">
 
 ## Android Emulator
 
+打开android studio创建一个新的项目(project)，等待下载和加载完毕（服务器在谷歌可能会非常慢），右上角AVD Manager即是安卓模拟器。\
 _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Android 11.0镜像进行安装_
 <img src="img/emulator_config.png">
 
@@ -140,18 +148,25 @@ _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Andr
 
 ## 使用方法
 
-1. 将整个仓库(repository)克隆到本地（需要安装git）
-
+1. 将整个仓库(repository)克隆到本地（需要安装git，没安装的百度即可）
+    1. 先进入到自己想放置的位置目录（桌面为例）
+       ```sh
+        cd desktop
+        ```
+    2. 克隆(clone)到本地
+        ```sh
+        git clone https://github.com/XiaochenHou/zhiying_android_automation.git
+        ```
 2. 找到`constant.py`文件，修改里面的常量，下面是*样例*
 
-   ```sh
-   PHONE_NUMBER = "13661045480"    //自己手机号
-   EXTRACT_CODE = "test_for_test"  //提取会议记录码
-   DEVICE_NAME = "emulator-5554"   //设备名称(adb devices)
-   P_VERSION = "11.0.0"            //安卓版本
-   SEARCH_CONTENT = "会议"          //自定义搜索内容
+   ```python
+   PHONE_NUMBER = "13661045480"    # 自己手机号
+   EXTRACT_CODE = "test_for_test"  # 提取会议记录码
+   DEVICE_NAME = "emulator-5554"   # 设备名称(adb devices)
+   P_VERSION = "11.0.0"            # 安卓版本
+   SEARCH_CONTENT = "会议"          # 自定义搜索内容
    ```
-   如果不是全部流程的话，确保账户已经登陆，并且comment掉不需要的测试
+   如果不是全部流程的话，确保账户已经提前登陆。
 3. 安装Appium-Python-Client库
 
    ```sh

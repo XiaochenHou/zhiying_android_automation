@@ -3,7 +3,15 @@ from constant import DEVICE_NAME, P_VERSION
 
 
 def set_things_up(full_test):
-    print("configuration started...")
+    print('''
+    ==================================
+      _ ___ _ __   _______ ___ _  __
+     (_) __| |\ \ / /_   _| __| |/ /
+     | | _|| |_\ V /  | | | _|| ' < 
+     |_|_| |____|_|   |_| |___|_|\_\\
+    ==================================
+    ''')
+    print("Configuration Started...")
     cap = {}
     cap["deviceName"] = DEVICE_NAME
     cap["platformName"] = "Android"
@@ -16,5 +24,5 @@ def set_things_up(full_test):
 
     driver = webdriver.Remote('0.0.0.0:4723/wd/hub', cap)
     driver.implicitly_wait(15)
-    print("configuration done!")
+    print("Configuration Done!")
     return driver

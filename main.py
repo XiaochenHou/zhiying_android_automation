@@ -6,7 +6,26 @@ from login import login_testing
 from document_page import document_page_test
 import argparse
 
-parser = argparse.ArgumentParser(description="Automatic smoke test for iflytek zhiying application")
+"""                                                                                                   
+     █████ ███████████ █████       █████ █████ ███████████ ██████████ █████   ████
+    ░░███ ░░███░░░░░░█░░███       ░░███ ░░███ ░█░░░███░░░█░░███░░░░░█░░███   ███░ 
+     ░███  ░███   █ ░  ░███        ░░███ ███  ░   ░███  ░  ░███  █ ░  ░███  ███   
+     ░███  ░███████    ░███         ░░█████       ░███     ░██████    ░███████    
+     ░███  ░███░░░█    ░███          ░░███        ░███     ░███░░█    ░███░░███   
+     ░███  ░███  ░     ░███      █    ░███        ░███     ░███ ░   █ ░███ ░░███  
+     █████ █████       ███████████    █████       █████    ██████████ █████ ░░████
+    ░░░░░ ░░░░░       ░░░░░░░░░░░    ░░░░░       ░░░░░    ░░░░░░░░░░ ░░░░░   ░░░░                                                                                                                                                                                                                                                                                                                                                    
+"""
+
+parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description='''
+    ==================================
+      _ ___ _ __   _______ ___ _  __
+     (_) __| |\ \ / /_   _| __| |/ /
+     | | _|| |_\ V /  | | | _|| ' < 
+     |_|_| |____|_|   |_| |___|_|\_\\
+    ==================================
+    
+    Automatic smoke test for iflytek zhiying application!''')
 parser.add_argument('--main', action='store_true', help='tests for the main page, 首页测试')
 parser.add_argument('--doc', action='store_true', help='tests for the document page, 文件页测试')
 parser.add_argument('--my', action='store_true', help='tests for the my page, 我的页测试')
