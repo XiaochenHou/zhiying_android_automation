@@ -125,6 +125,10 @@
 8. 运行appium-doctor，并使所有**必须**环境得到绿色对勾✅（如下图所示）
    <img src="img/appium-doctor_win.png">
 
+### 特别说明
+如果直接使用npm总是报错如404错误，原因是官方npm服务器在国外，国内使用不太方便，请参考下面链接更换镜像源来提升速度。\
+<a href="https://www.cnblogs.com/zixuan00/p/11197532.html">
+    按照这个链接的教程去配置镜像</a>
 ## Android Emulator
 
 打开android studio创建一个新的项目(project)，等待下载和加载完毕（服务器在谷歌可能会非常慢），右上角AVD Manager即是安卓模拟器。\
