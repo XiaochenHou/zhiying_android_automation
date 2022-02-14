@@ -160,11 +160,12 @@ _特别说明：如果使用安卓的模拟器进行运行，请选择x86，Andr
 2. 找到`constant.py`文件，修改里面的常量，下面是*样例*
 
    ```python
-   PHONE_NUMBER = "13661045480"    # 自己手机号
-   EXTRACT_CODE = "test_for_test"  # 提取会议记录码
-   DEVICE_NAME = "emulator-5554"   # 设备名称(adb devices)
-   P_VERSION = "11.0.0"            # 安卓版本
-   SEARCH_CONTENT = "会议"          # 自定义搜索内容
+   PHONE_NUMBER = "13661045480"        # 自己手机号
+   EXTRACT_CODE = "test_for_test"      # 提取会议记录码
+   DEVICE_NAME = "emulator-5554"       # 设备名称(adb devices)
+   P_VERSION = "11.0.0"                # 安卓版本
+   SEARCH_CONTENT = "会议"              # 自定义搜索内容
+   ADDRESS = "0.0.0.0:4723/wd/hub"     # windows把0.0.0.0改为127.0.0.1
    ```
    如果不是全部流程的话，确保账户已经提前登陆。
 3. 安装Appium-Python-Client库

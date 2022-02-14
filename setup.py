@@ -1,5 +1,5 @@
 from appium import webdriver
-from constant import DEVICE_NAME, P_VERSION
+from constant import DEVICE_NAME, P_VERSION, ADDRESS
 
 
 def set_things_up(full_test):
@@ -22,7 +22,7 @@ def set_things_up(full_test):
     if not full_test:
         cap["noReset"] = "true"
 
-    driver = webdriver.Remote('0.0.0.0:4723/wd/hub', cap)
+    driver = webdriver.Remote(ADDRESS, cap)
     driver.implicitly_wait(15)
     print("Configuration Done!")
     return driver
